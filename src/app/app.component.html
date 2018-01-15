@@ -1,0 +1,60 @@
+<div style="height: 400px"></div>
+<p>Form value: {{ form.value | json }}</p>
+
+<form [formGroup]="form" novalidate>
+  <div class="form-group">
+    <label class="center-block">Color Picker:
+      <input class="form-control" formControlName="colorpicker" #colorpicker="cdkOverlayOrigin" cdkOverlayOrigin >
+      <app-overlay [overlayOrigin]="colorpicker">
+        <app-colorpicker></app-colorpicker>
+      </app-overlay>
+    </label>
+  </div>
+  <hr />
+  <div class="form-group">
+    <label class="center-block">Destination:
+      <input #destinationRef class="form-control" formControlName="destination" #autocomplete="cdkOverlayOrigin" cdkOverlayOrigin >
+      <app-overlay [overlayOrigin]="autocomplete" [isVisible]="isDestinationVisible">
+        <app-autocomplete [inputRef]="autocomplete" [source]="autoCompleteSource"  (keydown)="keydownHandler($event)">
+          <div (click)="selectedItem(item);isDestinationVisible = false" class="item"  role="option" *ngFor="let item of autoCompleteSource; index as i" >
+            {{item.name}}
+          </div>
+        </app-autocomplete>
+      </app-overlay>
+    </label>
+  </div>
+</form>
+
+<div style="height: 400px"></div>
+
+
+<!--<div style="height: 800px"></div>-->
+<!--<button type="button" #david="cdkOverlayOrigin" cdkOverlayOrigin  (click)="isOpen = !isOpen">-->
+  <!--click-->
+<!--</button>-->
+
+<!--<ng-template-->
+  <!--cdkConnectedOverlay-->
+  <!--[cdkConnectedOverlayOrigin]="david"-->
+  <!--[cdkConnectedOverlayOpen]="isOpen" >-->
+
+   <!--HELLO-->
+
+<!--</ng-template>-->
+<!--<div style="height: 800px"></div>-->
+
+
+<!---->
+<!--</div>-->
+<!--<form action="">-->
+
+  <!--<input type="text" #whatever="cdkOverlayOrigin">-->
+  <!--<ng-template>-->
+    <!--cdkConnectedOverlay-->
+    <!--[cdkConnectedOverlayOrigin]="whatever"-->
+    <!--[cdkConnectedOverlayOpen]="isOpen" >-->
+
+    <!--HELLO-->
+
+    <!--</ng-template>-->
+<!--</form>-->

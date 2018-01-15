@@ -1,0 +1,11 @@
+<div role="listbox" tabindex="0" aria-label="Select an option"
+     [cdkTrapFocus]="true" cdkTrapFocusAutoCapture
+     (keydown)="keydownHandler($event)">
+      <div *ngFor="let color of colors; index as i"
+           role="option"
+           [attr.aria-label]="color.hex"
+           [attr.aria-selected]="color.hex == selectedColor"
+           (click)="selectedColor = color.hex; isOpen = false">
+           {{color.hex | json}}
+      </div>
+</div>

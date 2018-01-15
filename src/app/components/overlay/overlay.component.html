@@ -1,0 +1,8 @@
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="overlayOrigin"
+  [cdkConnectedOverlayOpen]="isOpen">
+  <div [cdkTrapFocus]="enableFocus" [cdkTrapFocusAutoCapture]="enableFocus"  #dialog class="dialog" role="dialog" aria-label="Option selector">
+      <ng-content></ng-content>
+  </div>
+</ng-template>

@@ -1,0 +1,30 @@
+<div role="listbox" tabindex="0" aria-label="Select an option">
+    <!--&lt;!&ndash; keyword input &ndash;&gt;-->
+    <!--<input *ngIf="showInputTag"-->
+           <!--#autoCompleteInput class="keyword"-->
+           <!--[attr.autocomplete]="autocomplete ? 'null' : 'off'"-->
+           <!--placeholder="{{placeholder}}"-->
+           <!--(focus)="showDropdownList($event)"-->
+           <!--(blur)="blurHandler($event)"-->
+           <!--(keydown)="inputElKeyHandler($event)"-->
+           <!--(input)="reloadListInDelay($event)"-->
+           <!--[(ngModel)]="keyword" />-->
+    <!--&lt;!&ndash; dropdown that user can select &ndash;&gt;-->
+      <!--<li *ngIf="isLoading && loadingTemplate" class="loading" [innerHTML]="loadingTemplate"></li>-->
+      <!--<li *ngIf="isLoading && !loadingTemplate" class="loading">{{loadingText}}</li>-->
+      <!--<li *ngIf="minCharsEntered && !isLoading && !filteredList.length"-->
+          <!--(mousedown)="selectOne('')"-->
+          <!--class="no-match-found">{{noMatchFoundText || 'No Result Found'}}</li>-->
+      <!--<li *ngIf="blankOptionText && filteredList.length"-->
+          <!--(mousedown)="selectOne('')"-->
+          <!--class="blank-item">{{blankOptionText}}</li>-->
+    <div >
+          <ng-content ></ng-content>
+    </div>
+  <!--<div class="item"  role="option"-->
+       <!--*ngFor="let item of source; index as i">-->
+    <!--{{item.name}}-->
+  <!--</div>-->
+
+</div>
+
